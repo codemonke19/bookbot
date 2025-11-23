@@ -1,2 +1,3 @@
 # bookbot
-First project as part of my bood.dev course
+
+BookBot is my first [Boot.dev](https://www.boot.dev) project!
