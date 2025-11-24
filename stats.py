@@ -14,3 +14,17 @@ def count_characters(book_text):
         else:
             char_count[char] += 1
     return char_count
+
+def helper(dict):
+    return dict["num"]
+
+def reporting(char_count):
+    report = []
+    for key in char_count:
+        new_dict = {}
+        new_dict["char"] = key
+        value = char_count[key]
+        new_dict["num"] = value
+        report.append(new_dict)
+    report.sort(reverse = True, key = helper)
+    return report
