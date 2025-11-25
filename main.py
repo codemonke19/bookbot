@@ -1,3 +1,4 @@
+import sys
 from stats import (
     count_words,
     count_characters,
@@ -14,7 +15,7 @@ def main(path_to_file):
     char_count = count_characters(book_text)
     sorted_report = reporting(char_count)
     print("============ BOOKBOT ============")
-    print("Analyzing book found at books/frankenstein.txt...")
+    print(f"Analyzing book found at {path_to_file}")
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
     print("--------- Character Count -------")
@@ -23,4 +24,8 @@ def main(path_to_file):
             print(f"{n['char']}: {n['num']}")
     print("============= END ===============")
 
-main("./books/frankenstein.txt")
+if len(sys.argv) == 2:
+    main (sys.argv[1])
+else:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
